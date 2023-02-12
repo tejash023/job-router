@@ -6,14 +6,12 @@ export default function Career() {
 
   return (
     <div className='careers'>
-      {careers!=null 
-        ? careers.map(career => (
+      {careers.map(career => (
           <Link to={career.id.toString()} key={career.id}>
             <p>{career.title}</p>
             <p>Based in {career.location}</p>
           </Link>
-          )) 
-        : <h4>Oops! There is some issue displaying the careers. Please try after sometime.</h4>}
+          ))}
       </div>
   )
 }
@@ -21,10 +19,12 @@ export default function Career() {
 
 //loader function
 export const careersLoader = async () => {
-  try{
-    const res = await fetch('http://localhost:4000/careers')
-    return res.json();
-  }catch{
-    return null;
+  
+  const res = await fetch('http://localhost:4000/careers');
+
+  if(!res.ok){
+    throw Error('Error in fetching the careers. Please try again later.')
   }
+  return res.json();
+  
 }

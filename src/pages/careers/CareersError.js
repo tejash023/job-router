@@ -3,6 +3,7 @@ import { useRouteError, Link } from "react-router-dom"
 export default function CareersError() {
 
   const error = useRouteError();
+  console.log('error:', error);
   return (
     <div>
       <h2>Oops! We encoutered an error.</h2>
