@@ -8,13 +8,16 @@ import {
 //pages
 import Home from './pages/Home';
 import About from './pages/About';
-import RootLayout from './layouts/RootLayout';
-import HelpLayout from './layouts/HelpLayout';
 import FAQ from './pages/help/FAQ';
 import Contact from './pages/help/Contact';
 import NotFound from './pages/NotFound';
+import Career, { careersLoader } from './pages/careers/Career';
+import CareerDetails, { careerDetailsLoader } from './pages/careers/CareerDetails';
+
+//layouts
+import RootLayout from './layouts/RootLayout';
+import HelpLayout from './layouts/HelpLayout';
 import CareerLayout from './layouts/CareerLayout';
-import Career, { careersLoader } from './pages/Career';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,6 +36,12 @@ const router = createBrowserRouter(
           index 
           element={<Career />}
           loader={careersLoader} 
+        />
+        <Route 
+          path=':id' 
+          element={<CareerDetails />}
+          loader={careerDetailsLoader}
+          
         />
       </Route>
       

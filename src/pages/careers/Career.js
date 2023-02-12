@@ -6,14 +6,15 @@ export default function Career() {
 
   return (
     <div className='careers'>
-      {careers!=null ? careers.map(career => (
-        <Link to="/" key={career.id}>
-          <p>{career.title}</p>
-          <p>Based in {career.location}</p>
-        </Link>
-      )) : <h4>Oops! There is some issue displaying the careers. Please try after sometime.</h4>}
-      
-    </div>
+      {careers!=null 
+        ? careers.map(career => (
+          <Link to={career.id.toString()} key={career.id}>
+            <p>{career.title}</p>
+            <p>Based in {career.location}</p>
+          </Link>
+          )) 
+        : <h4>Oops! There is some issue displaying the careers. Please try after sometime.</h4>}
+      </div>
   )
 }
 
