@@ -1,5 +1,5 @@
 
-import { Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 export default function HelpLayout() {
   return (
@@ -7,6 +7,11 @@ export default function HelpLayout() {
       
       <h2>Website Help</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+      <nav>
+        <NavLink to='faq'>View the FAQ</NavLink>
+        <NavLink to='contact'>Contact Us</NavLink>
+      </nav>
 
       <Outlet />
     </div>
