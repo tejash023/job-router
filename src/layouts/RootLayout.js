@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 export default function RootLayout() {
   return (
@@ -10,6 +10,9 @@ export default function RootLayout() {
           <NavLink to="about">About</NavLink>
         </nav>
       </header>
+      <main>
+        <Outlet />
+      </main>
     </div>
   )
 }
