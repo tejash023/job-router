@@ -10,8 +10,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import RootLayout from './layouts/RootLayout';
 import HelpLayout from './layouts/HelpLayout';
-import FAQ from './pages/help/FAQ'
-import Contact from './pages/help/Contact'
+import FAQ from './pages/help/FAQ';
+import Contact from './pages/help/Contact';
+import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,8 @@ const router = createBrowserRouter(
         <Route path='faq' element={<FAQ />}/>
         <Route path='contact' element={<Contact />}/>
       </Route>
+
+      <Route path='*' element={<NotFound />} />
     </Route>
   )
 )
